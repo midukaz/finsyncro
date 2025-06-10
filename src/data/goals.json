@@ -1,0 +1,40 @@
+{
+  "goals": [
+    { 
+      "id": 1, 
+      "name": "Fundo de emergência", 
+      "targetAmount": 10000, 
+      "currentAmount": 5000, 
+      "deadline": "2024-12-31",
+      "category": "Essencial",
+      "color": "#2563eb"
+    },
+    { 
+      "id": 2, 
+      "name": "Viagem para Europa", 
+      "targetAmount": 15000, 
+      "currentAmount": 3000, 
+      "deadline": "2025-06-30",
+      "category": "Lazer",
+      "color": "#16a34a"
+    },
+    { 
+      "id": 3, 
+      "name": "Entrada apartamento", 
+      "targetAmount": 50000, 
+      "currentAmount": 12500, 
+      "deadline": "2026-01-31",
+      "category": "Moradia",
+      "color": "#dc2626"
+    }
+  ],
+  "categories": [
+    "Essencial",
+    "Lazer",
+    "Moradia",
+    "Transporte",
+    "Educação",
+    "Saúde",
+    "Outros"
+  ]
+} 

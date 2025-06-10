@@ -1,0 +1,74 @@
+{
+  "transactions": [
+    {
+      "id": 1,
+      "date": "2024-05-15",
+      "description": "Compra no supermercado",
+      "category": "Alimentos",
+      "account": "Cartão de crédito",
+      "amount": -150.00,
+      "type": "expense",
+      "displayDate": "15 de maio"
+    },
+    {
+      "id": 2,
+      "date": "2024-05-14",
+      "description": "Salário",
+      "category": "Renda",
+      "account": "Conta corrente",
+      "amount": 3000.00,
+      "type": "income",
+      "displayDate": "14 de maio"
+    },
+    {
+      "id": 3,
+      "date": "2024-05-12",
+      "description": "Jantar fora",
+      "category": "Restaurantes",
+      "account": "Cartão de crédito",
+      "amount": -80.00,
+      "type": "expense",
+      "displayDate": "12 de maio"
+    },
+    {
+      "id": 4,
+      "date": "2024-05-10",
+      "description": "Transferência para poupança",
+      "category": "Transferências",
+      "account": "Conta corrente",
+      "amount": -500.00,
+      "type": "expense",
+      "displayDate": "10 de maio"
+    },
+    {
+      "id": 5,
+      "date": "2024-05-08",
+      "description": "Compra de roupas",
+      "category": "Compras",
+      "account": "Cartão de crédito",
+      "amount": -200.00,
+      "type": "expense",
+      "displayDate": "08 de maio"
+    }
+  ],
+  "categories": [
+    "Alimentos",
+    "Restaurantes",
+    "Transporte",
+    "Lazer",
+    "Compras",
+    "Renda",
+    "Transferências",
+    "Educação",
+    "Saúde",
+    "Moradia",
+    "Assinaturas",
+    "Outros"
+  ],
+  "accounts": [
+    "Conta corrente",
+    "Cartão de crédito",
+    "Poupança",
+    "Dinheiro"
+  ]
+} 
