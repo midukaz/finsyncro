@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import authService from '../services/authService';
 
 interface SidebarProps {
   activeItem: string;
@@ -9,6 +11,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeItem, onItemClick }) => {
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const [isThemeMenuOpen, setIsThemeMenuOpen] = useState(false);
   const [themeMode, setThemeMode] = useState<'light' | 'dark' | 'system'>('light');
+  const navigate = useNavigate();
   
   // Definição dos itens do menu
   const menuItems = [
@@ -79,9 +82,17 @@ const Sidebar: React.FC<SidebarProps> = ({ activeItem, onItemClick }) => {
   };
 
   const handleLogout = () => {
-    // Implementar lógica de logout
-    console.log('Logout');
+    // Usar o authService para fazer logout
+    authService.logout();
+    
+    // Redirecionar para a página de login
+    navigate('/login');
   };
+
+  // Obter os dados do usuário
+  const user = authService.getCurrentUser();
+  const userName = user ? user.name : 'Usuário';
+  const userEmail = user ? user.email : 'usuario@exemplo.com';
 
   return (
     <div className="flex flex-col h-full w-[280px] bg-white pt-4 pb-2">
@@ -124,8 +135,8 @@ const Sidebar: React.FC<SidebarProps> = ({ activeItem, onItemClick }) => {
             }}
           ></div>
           <div className="flex flex-col w-full overflow-hidden">
-            <h1 className="text-[#111418] text-base font-medium leading-normal">Olivia</h1>
-            <p className="text-[#60748a] text-sm font-normal leading-normal">olivia@mail.com</p>
+            <h1 className="text-[#111418] text-base font-medium leading-normal">{userName}</h1>
+            <p className="text-[#60748a] text-sm font-normal leading-normal">{userEmail}</p>
           </div>
           <svg 
             xmlns="http://www.w3.org/2000/svg" 

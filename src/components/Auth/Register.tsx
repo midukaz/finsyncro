@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Label } from "@/components/ui/label";
-import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Input } from "../../components/ui/input";
+import { Button } from "../../components/ui/button";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../../components/ui/card";
+import { Label } from "../../components/ui/label";
+import { Alert, AlertDescription } from "../../components/ui/alert";
 import { AlertCircle } from "lucide-react";
-import authService from '@/services/authService';
+import authService from '../../services/authService';
 
 export default function Register() {
   const [name, setName] = useState('');
@@ -49,13 +49,9 @@ export default function Register() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex items-center justify-center min-h-screen bg-white">
       <Card className="w-full max-w-md">
         <CardHeader className="space-y-1">
-          <div className="text-center mb-2">
-            <h1 className="text-3xl font-bold text-blue-600">FinSyncro</h1>
-            <p className="text-xs text-gray-500">Gerenciamento financeiro inteligente</p>
-          </div>
           <CardTitle className="text-2xl font-bold text-center">Criar uma conta</CardTitle>
           <CardDescription className="text-center">
             Registre-se para começar a usar o sistema
