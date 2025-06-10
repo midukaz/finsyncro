@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Input } from "../../components/ui/input";
 import { Button } from "../../components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../../components/ui/card";
 import { Label } from "../../components/ui/label";
 import { Alert, AlertDescription } from "../../components/ui/alert";
 import { AlertCircle } from "lucide-react";
@@ -42,20 +41,22 @@ export default function Login() {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-white">
-      <Card className="w-full max-w-md">
-        <CardHeader className="space-y-1">
-          <CardTitle className="text-2xl font-bold text-center">Entrar</CardTitle>
-          <CardDescription className="text-center">
-            Digite suas credenciais para acessar o sistema
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
+      <div className="w-full max-w-md p-6">
+        <div className="space-y-6">
+          <div className="space-y-2 text-center">
+            <h1 className="text-2xl font-bold">Entrar</h1>
+            <p className="text-sm text-gray-500">
+              Digite suas credenciais para acessar o sistema
+            </p>
+          </div>
+          
           {error && (
             <Alert variant="destructive" className="mb-4">
               <AlertCircle className="h-4 w-4" />
               <AlertDescription>{error}</AlertDescription>
             </Alert>
           )}
+          
           <form onSubmit={handleSubmit}>
             <div className="space-y-4">
               <div className="space-y-2">
@@ -90,26 +91,27 @@ export default function Login() {
               </Button>
             </div>
           </form>
-        </CardContent>
-        <CardFooter className="flex flex-col space-y-4">
-          <div className="text-center text-sm">
-            Não tem uma conta?{' '}
-            <Link to="/register" className="text-primary hover:underline">
-              Registre-se
-            </Link>
+          
+          <div className="space-y-4">
+            <div className="text-center text-sm">
+              Não tem uma conta?{' '}
+              <Link to="/register" className="text-primary hover:underline">
+                Registre-se
+              </Link>
+            </div>
+            <div className="text-center text-xs text-muted-foreground">
+              Ao entrar, você concorda com nossos{' '}
+              <Link to="/terms" className="underline">
+                Termos de Serviço
+              </Link>{' '}
+              e{' '}
+              <Link to="/privacy" className="underline">
+                Política de Privacidade
+              </Link>
+            </div>
           </div>
-          <div className="text-center text-xs text-muted-foreground">
-            Ao entrar, você concorda com nossos{' '}
-            <Link to="/terms" className="underline">
-              Termos de Serviço
-            </Link>{' '}
-            e{' '}
-            <Link to="/privacy" className="underline">
-              Política de Privacidade
-            </Link>
-          </div>
-        </CardFooter>
-      </Card>
+        </div>
+      </div>
     </div>
   );
 } 
